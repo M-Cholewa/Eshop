@@ -24,7 +24,7 @@ namespace Eshop.API.Middlewares
             catch (Exception ex)
             {
                 _metricsService.IncrementErrorCount(ex.GetType().Name);
-                throw;
+                throw; // pass further
             }
         }
     }
