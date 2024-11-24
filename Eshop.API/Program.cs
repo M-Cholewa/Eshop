@@ -41,7 +41,8 @@ public class Program
 
         app.MapControllers();
             
-        app.UseMiddleware<ExceptionHandlingMiddleware>();
+        app.UseMiddleware<ExceptionHandlingMiddleware>(); //1st
+        app.UseMiddleware<MetricsMiddleware>(); //2nd
 
         app.Run();
     }

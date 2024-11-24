@@ -3,6 +3,7 @@ using Eshop.Domain.Customers;
 using Eshop.Domain.Orders;
 using Eshop.Domain.SeedWork;
 using Eshop.Infrastructure.Database;
+using Eshop.Infrastructure.Metrics;
 using Eshop.Infrastructure.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,5 +37,7 @@ public static class Registry
             var database = client.GetDatabase(mongoDbSettings.DatabaseName);
             return new OrdersContext(database);
         });
+
+        services.AddSingleton<IMetricsService, MetricsService>();
     }
 }

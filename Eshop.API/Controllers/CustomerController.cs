@@ -42,7 +42,7 @@ namespace Eshop.API.Controllers
         /// <returns>The details of the specified customer.</returns>
         [Route("{customerId:guid}")]
         [HttpGet]
-        [ProducesResponseType(typeof(OrderDto), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(CustomerDto), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorDto), (int)HttpStatusCode.BadGateway)]
         public async Task<IActionResult> GetCustomer([FromRoute] Guid customerId)
         {
